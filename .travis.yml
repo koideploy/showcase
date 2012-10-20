@@ -1,4 +1,1 @@
 language: ruby
-before_script:
-  - psql -c 'create database koideploy-showcase_test' -U postgres
-  - rake db:migrate
