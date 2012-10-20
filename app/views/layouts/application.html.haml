@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %title Koi Deploy Showcase
+    = stylesheet_link_tag    'application', :media => 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body{:class => 'showcase'}
+    %header.row
+      %section.container
+        .span8.offset2
+          Header
+    .row
+      %section.container
+        .span8.offset2
+          = yield
+    %footer.row
+      %section.container
+        .span8.offset2.muted
+          %small.pull-left
+            A demo project by
+            %a{:href => 'http://koideploy.com'} koideploy.com
