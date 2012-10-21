@@ -12,6 +12,11 @@ describe HerokuRelease do
     JSON.parse(json)
   end
 
+  before do
+    HerokuRelease.class_variable_set('@@heroku_releases', nil)
+    HerokuRelease.class_variable_set('@@travis_ci_builds', nil)
+  end
+
   context 'get_releases' do
     before do
       response = Object.new

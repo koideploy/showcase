@@ -6,14 +6,13 @@ class HerokuRelease < OpenStruct
 
   class << self
     def get_releases
-      @travis_ci_builds = nil
-      heroku.get_releases(HEROKU_APP_NAME).body.map do |release|
+      @@heroku_releases ||= heroku.get_releases(HEROKU_APP_NAME).body.map do |release|
         new(get_attributes(release))
       end
     end
 
     def get_travis_ci_builds
-      @travis_ci_builds ||= HTTParty.get(TRAVIS_CI_BUILDS_API_URL)
+      @@travis_ci_builds ||= HTTParty.get(TRAVIS_CI_BUILDS_API_URL)
     end
 
     private
