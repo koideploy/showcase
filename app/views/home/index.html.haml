@@ -1,1 +1,8 @@
-Change Me
+%ul#releases.unstyled
+  - @releases.each do |release|
+    %li.release
+      %h4 Heroku Release #{release.name}
+      %p= release.descr
+      .info
+        Triggered by #{commit_link(release.commit)}
+        %span.created_at #{time_ago_in_words release.created_at} ago.
