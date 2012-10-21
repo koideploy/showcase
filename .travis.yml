@@ -1,1 +1,5 @@
 language: ruby
+notifications:
+  webhooks:
+    - https://koideploy.com/webhooks/travis-ci/skorfmann
+
