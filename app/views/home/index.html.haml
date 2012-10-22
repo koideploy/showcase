@@ -1,3 +1,15 @@
+%ul.thumbnails
+  %li
+    .thumbnail
+      %img{:src => @photo['url'], :title => @photo['title'], :alt => @photo['title']}
+      .caption
+        .creativecommons
+          licensed under CreativeCommons:
+          %span.owner= @photo['name']
+          %span.title= "\"#{@photo['title']}\""
+        This photo was selected and committed by our hardworking
+        %a{:href => 'https://github.com/koideploy/commit-bot', :target => '_blank'}
+          commit bot.
 %ul#releases.unstyled
   - @releases.each do |release|
     %li.release
