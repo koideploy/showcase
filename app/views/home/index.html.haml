@@ -2,9 +2,7 @@
   %img{:src => @photo[:url], :title => @photo[:title], :alt => @photo[:title]}
   .caption
     .creativecommons
-      %span.owner= @photo[:username]
-      = ' - '
-      %span.title= "\"#{@photo[:title]}\""
+      = flickr_photo_backlink @photo
       %span.license= @photo[:license_name]
     This photo was selected and committed by our hardworking
     %a{:href => 'https://github.com/koideploy/commit-bot', :target => '_blank'}
