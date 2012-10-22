@@ -22,7 +22,7 @@ class HerokuRelease < OpenStruct
     end
 
     def heroku
-      #initialized via ENV['HEROKU_API_KEY']
+      # NOTE: initialized via ENV['HEROKU_API_KEY']
       @heroku ||= Heroku::API.new
     end
   end
