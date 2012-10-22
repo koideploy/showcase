@@ -15,7 +15,13 @@
  @import 'bootstrap';
  @import 'compass/css3';
 
-.creativecommons {
-  font-size: 75%;
-  margin-top: -8px;
+.thumbnail {
+  img {
+    width: 500px;
+    height: 333px;
+  }
+  .creativecommons {
+    font-size: 75%;
+    margin-top: -8px;
+  }
 }
