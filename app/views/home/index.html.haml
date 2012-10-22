@@ -1,5 +1,6 @@
 .thumbnail
-  %img{:src => @photo[:url], :title => @photo[:title], :alt => @photo[:title]}
+  %a{:href => @photo[:url_photopage]}
+    %img{:src => @photo[:url], :title => @photo[:title], :alt => @photo[:title]}
   .caption
     .creativecommons
       = flickr_photo_backlink @photo
