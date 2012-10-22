@@ -3,7 +3,7 @@
   .caption
     .creativecommons
       = flickr_photo_backlink @photo
-      %span.license= @photo[:license_name]
+      = license_link @photo
     This photo was selected and committed by our hardworking
     %a{:href => 'https://github.com/koideploy/commit-bot', :target => '_blank'}
       commit bot.
