@@ -5,12 +5,13 @@
     .creativecommons
       = flickr_photo_backlink @photo
       = license_link @photo
-    This photo was selected and committed by our hardworking
+    This photo was selected and #{commit_link(@current_release.commit, 'committed')} by our hardworking
     %a{:href => 'https://github.com/koideploy/commit-bot', :target => '_blank'}
-      commit bot.
-
+      commit bot,
+    which triggered the successful #{link_to "Travis CI Build ##{@current_release.travis_ci_build_number}", @current_release.travis_ci_build_url, :target => '_blank'}. This notified #{link_to 'KoiDeploy.com', 'https://koideploy.com', :target => '_blank'} to deploy version '#{@current_release.name}' of this application.
+%h3 Previous Releases
 %ul#releases.unstyled
-  - @releases.each do |release|
+  - @previous_releases.each do |release|
     %li.release
       %h4 Heroku Release #{release.name}
       %p= release.commit_message

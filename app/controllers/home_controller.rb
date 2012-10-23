@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @releases = HerokuRelease.get_releases.reverse[0..10]
+    @current_release = HerokuRelease.get_releases.reverse.first
+    @previous_releases = HerokuRelease.get_releases.reverse[1..10]
     @photo = FlickrPhoto::FLICKR_PHOTO
   end
 end
