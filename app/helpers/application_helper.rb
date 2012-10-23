@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def license_link(photo)
-    link_to @photo[:license_name], @photo[:license_url], :class => 'license', :target => '_blank'
+    link_to photo[:license_name], photo[:license_url], :class => 'license', :target => '_blank'
   end
 
   def flickr_photo_backlink(photo)
-    link_text = "#{@photo[:username]} - \"#{@photo[:title]}\""
-    link_to link_text, @photo[:url_photopage], :target => '_blank'
+    link_text = "#{photo[:username]} - \"#{photo[:title]}\""
+    link_to link_text, photo[:url_photopage], :target => '_blank'
   end
 end
